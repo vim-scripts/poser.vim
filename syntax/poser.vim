@@ -35,14 +35,14 @@ syn keyword poserIKChainInfo addLink goal linkWeight
 syn keyword poserStrokeParms lineLength density minRadius maxRadius lineRandomness strokeHeadLength strokeTailLength colorRandom crossHatch opacity totalNormCutOff colorSegCutOff britenessSegCutOff britenessLoSegCutOff coloredLines brushStyle
 syn keyword poserKeysInfo static k sl spl sm
 syn keyword poserBoolean on off flipped
-syn keyword poserSpecial xrot yrot zrot NO_MAP USEPARENT UNIVERSE
+syn keyword poserSpecial xrot yrot zrot NO_MAP USEPARENT UNIVERSE NULL
 syn match poserBraces "[{}]"
 syn match poserRef "\w\+:\d\+"
 syn match poserRef "\w\+ \w\+:\d\+"
 syn match poserRef "\w\+ \w\+ \w\+:\d\+"
 syn match poserFile "\s:\S\+$"
 syn match poserInt "\s-*\d\+"
-syn match poserInt "e+\d\+"
+syn match poserInt "e[+-]\d\+"
 syn match poserFloat "-*\.\d\+"
 syn match poserFloat "-*\d\+\.\d\+"
 syn match poserFloat "-*\d\+\.\d\+e+\d\+"
