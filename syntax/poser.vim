@@ -49,6 +49,7 @@ syn match poserInt "e[+-]\d\+"
 syn match poserFloat "-*\.\d\+"
 syn match poserFloat "-*\d\+\.\d\+"
 syn match poserFloat "-*\d\+\.\d\+e+\d\+"
+syn match wavefrontObjComment "^#.*$"
 
 
 if version >= 508 || !exists("did_perl_syn_inits")
@@ -89,6 +90,7 @@ if version >= 508 || !exists("did_perl_syn_inits")
   HiLink poserKeysInfo		Function
   HiLink poserSpecial		Type
   HiLink poserConstructor	Type
+  HiLink waveFrontObjComment	Comment
   delcommand HiLink
 endif
 
