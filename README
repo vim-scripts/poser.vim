@@ -1,0 +1,3 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=496
+
+This is a syntax file for use with CuriousLabs' Poser Library and Scene files, cr2, pp2, pz2, pz3, hr2, lt2, cm2, fc2 and hd2. Version 1.05 also supports Wavefront OBJect files due to added support for customGeom.
