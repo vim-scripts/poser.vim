@@ -19,12 +19,12 @@ endif
 
 syn match poserGetStringRes /GetStringRes(\d\+,\d\+)/
 syn region  poserString start=+"+  end=+"+ contains=poserGetStringRes
-syn keyword poserBlock	version movieInfo prop actor light camera figure doc illustrationParms renderDefaults material channels deltas alternateGeom inkyChain fgStrokeParms bgStrokeParms edgeStrokeParms keys
+syn keyword poserBlock	version movieInfo prop actor light camera figure doc illustrationParms renderDefaults material channels deltas alternateGeom inkyChain fgStrokeParms bgStrokeParms edgeStrokeParms keys geomCustom
 syn keyword poserDeltaInfo Figure d
 syn keyword poserKeyword figureResFile setGeomHandlerOffset
 syn keyword poserVersionNumber number
 syn keyword poserMovieInfo numFrames loopStart loopEnd currentFrame framesPerSec outputWidth outputHeight outputFramesPerSec outputStartFrame outputEndFrame useCustomFramesPerSec renderStyle outputType res movieName bgMovieOn
-syn keyword poserObjectInfo storageOffset geomResource objFileGeom geomHandlerGeom lightType name bend dynamicsLock hidden addToMenu castsShadow includeInDepthCue parent objFile defaultGeomName endPoint origin orientation displayOrigin displayMode customMaterial locked port cameraModel depthMapSize depthCamera doShadow lightOn
+syn keyword poserObjectInfo storageOffset geomResource objFileGeom geomHandlerGeom lightType name bend dynamicsLock hidden addToMenu castsShadow includeInDepthCue parent objFile defaultGeomName endPoint origin orientation displayOrigin displayMode customMaterial locked port cameraModel depthMapSize depthCamera doShadow lightOn numbVerts numbTVerts numbTSets numbElems numbSets v vt g f usemtl
 syn keyword poserFigureInfo root defaultPick displayOn allowsBending figureType origFigureType canonType conforming
 syn keyword poserDocInfo dimensions screenPlace useLimits headGuides horizon vanishingLines hipShoulder groundDisplay depthCue boxesAlways bgPicOn handLockOn loopInterpolation quatIntrpolation doBalance fastTracking groundShadows bendBodies fgColor bgColor shadowColor paperTexture addActor addLight addCamera rootActor rightCamera leftCamera posingCamera faceCamera rHandCamera lHandCamera dollyCamera topCamera frontCamera mainCamera auxCamera useCamera pickActor backgroundFile
 syn keyword poserIlloParmsInfo	combineGradient thresholdGradient combineColor overBlack autoDensity normalSegCutOff bgStyle useUVspace autoSpacing colorBlend liteFactor1 liteFactor2 liteFactor3
@@ -38,6 +38,7 @@ syn keyword poserKeysInfo static k sl spl sm
 syn keyword poserBoolean on off flipped
 syn keyword poserSpecial xrot yrot zrot NO_MAP USEPARENT UNIVERSE NULL
 syn keyword poserConstructor addChild weld valueOpDeltaAdd sphereMatsRaw
+syn match poserVector "/\d\+"
 syn match poserBraces "[{}]"
 syn match poserRef "\w\+:\d\+"
 syn match poserRef "\w\+ \w\+:\d\+"
@@ -65,6 +66,7 @@ if version >= 508 || !exists("did_perl_syn_inits")
   HiLink poserString		String
   HiLink poserInt		Number
   HiLink poserFloat		Number
+  HiLink poserVector		Number
   HiLink poserBlock		Repeat
   HiLink poserKeyword		Function
   HiLink poserVersionNumber	Function
