@@ -19,23 +19,25 @@ endif
 
 syn match poserGetStringRes /GetStringRes(\d\+,\d\+)/
 syn region  poserString start=+"+  end=+"+ contains=poserGetStringRes
-syn keyword poserBlock	version movieInfo prop actor light camera figure doc illustrationParms renderDefaults material channels deltas alternateGeom inkyChain fgStrokeParms bgStrokeParms edgeStrokeParms keys sphereMatsRaw
+syn keyword poserBlock	version movieInfo prop actor light camera figure doc illustrationParms renderDefaults material channels deltas alternateGeom inkyChain fgStrokeParms bgStrokeParms edgeStrokeParms keys
+syn keyword poserDeltaInfo Figure d
 syn keyword poserKeyword figureResFile setGeomHandlerOffset
 syn keyword poserVersionNumber number
 syn keyword poserMovieInfo numFrames loopStart loopEnd currentFrame framesPerSec outputWidth outputHeight outputFramesPerSec outputStartFrame outputEndFrame useCustomFramesPerSec renderStyle outputType res movieName bgMovieOn
 syn keyword poserObjectInfo storageOffset geomResource objFileGeom geomHandlerGeom lightType name bend dynamicsLock hidden addToMenu castsShadow includeInDepthCue parent objFile defaultGeomName endPoint origin orientation displayOrigin displayMode customMaterial locked port cameraModel depthMapSize depthCamera doShadow lightOn
-syn keyword poserFigureInfo root addChild defaultPick displayOn weld allowsBending figureType origFigureType canonType conforming
+syn keyword poserFigureInfo root defaultPick displayOn allowsBending figureType origFigureType canonType conforming
 syn keyword poserDocInfo dimensions screenPlace useLimits headGuides horizon vanishingLines hipShoulder groundDisplay depthCue boxesAlways bgPicOn handLockOn loopInterpolation quatIntrpolation doBalance fastTracking groundShadows bendBodies fgColor bgColor shadowColor paperTexture addActor addLight addCamera rootActor rightCamera leftCamera posingCamera faceCamera rHandCamera lHandCamera dollyCamera topCamera frontCamera mainCamera auxCamera useCamera pickActor backgroundFile
 syn keyword poserIlloParmsInfo	combineGradient thresholdGradient combineColor overBlack autoDensity normalSegCutOff bgStyle useUVspace autoSpacing colorBlend liteFactor1 liteFactor2 liteFactor3
 syn keyword poserRenderInfo Kd Ks Ns antialiasing textureStrength bumpStrength useTexture useBump castShadows renderOver toNewWindow newWinWidth newWinHeight newWinDPI
-syn keyword poserChannelID rotateX rotateY rotateZ scale scaleX scaleY scaleZ kdRed kdGreen kdBlue kdIntensity propagatingScale propagatingScaleX propagatingScaleY propagatingScaleZ translateX translateY translateZ depthMapStrength depthMapSize fical hither valueParm xOffsetA xOffsetB yOffsetA yOffsetB zOffsetA zOffsetB twistX twistY twistZ jointX jointY jointZ geomChan curve liteFalloffStart liteFalloffEnd liteAttenStart liteAttenEnd
-syn keyword poserChannelInfo uniqueInterp initValue hidden forceLimits min max trackingScale interpStyleLocked angles smoothZones otherActor matrixActor center startPt endPt doBulge jointMult calcWeights staticValue
+syn keyword poserChannelID rotateX rotateY rotateZ scale scaleX scaleY scaleZ kdRed kdGreen kdBlue kdIntensity propagatingScale propagatingScaleX propagatingScaleY propagatingScaleZ translateX translateY translateZ depthMapStrength depthMapSize fical hither valueParm xOffsetA xOffsetB yOffsetA yOffsetB zOffsetA zOffsetB twistX twistY twistZ jointX jointY jointZ geomChan curve liteFalloffStart liteFalloffEnd liteAttenStart liteAttenEnd targetGeom
+syn keyword poserChannelInfo uniqueInterp initValue hidden forceLimits min max trackingScale interpStyleLocked angles smoothZones otherActor matrixActor center startPt endPt doBulge jointMult calcWeights staticValue deltaAddDelta indexes numbDeltas
 syn keyword poserMaterialInfo KdColor KaColor KsColor Texture NsExponent tMin tMax tExpo bumpStrength ksIgnoreTexture reflectThruLights reflectThruKd textureMap bumpMap reflectionMap transparencyMap ReflectionColor reflectionStrength TextureColor
 syn keyword poserIKChainInfo addLink goal linkWeight
 syn keyword poserStrokeParms lineLength density minRadius maxRadius lineRandomness strokeHeadLength strokeTailLength colorRandom crossHatch opacity totalNormCutOff colorSegCutOff britenessSegCutOff britenessLoSegCutOff coloredLines brushStyle
 syn keyword poserKeysInfo static k sl spl sm
 syn keyword poserBoolean on off flipped
 syn keyword poserSpecial xrot yrot zrot NO_MAP USEPARENT UNIVERSE NULL
+syn keyword poserConstructor addChild weld valueOpDeltaAdd sphereMatsRaw
 syn match poserBraces "[{}]"
 syn match poserRef "\w\+:\d\+"
 syn match poserRef "\w\+ \w\+:\d\+"
@@ -72,6 +74,7 @@ if version >= 508 || !exists("did_perl_syn_inits")
   HiLink poserDocInfo		Function
   HiLink poserIlloParmsInfo	Function
   HiLink poserRenderInfo	Function
+  HiLink poserDeltaInfo		Function
   HiLink poserChannelID		Conditional
   HiLink poserChannelInfo	Function
   HiLink poserMaterialInfo	Function
@@ -83,6 +86,7 @@ if version >= 508 || !exists("did_perl_syn_inits")
   HiLink poserGetStringRes	Type
   HiLink poserKeysInfo		Function
   HiLink poserSpecial		Type
+  HiLink poserConstructor	Type
   delcommand HiLink
 endif
 
